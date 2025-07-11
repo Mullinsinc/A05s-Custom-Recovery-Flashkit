@@ -1,6 +1,7 @@
 #!/system/bin/sh
 
 # Mount point: /sdcard/a05s_bundle
+mkdir -p /sdcard/a05s_bundle
 cd /sdcard/a05s_bundle || exit 1
 
 echo "[*] Flashing recovery..."
