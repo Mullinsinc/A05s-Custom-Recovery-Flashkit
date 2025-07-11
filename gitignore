@@ -1,0 +1,12 @@
+---
+
+## 📁 File 4: `.gitignore`
+Ignore local Termux/system clutter:
+
+```gitignore
+*.zip
+*.tar.gz
+*.img
+*.bin
+__MACOSX/
+.DS_Store
