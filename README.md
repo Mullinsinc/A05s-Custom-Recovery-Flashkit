@@ -1,21 +1,67 @@
-# A05s-Custom-Recovery-Flashkit
-Toolkit to flash custom recovery + disable AVB on Samsung A05s
-# A05s Custom Recovery Flash Kit (by Mullins)
+# A05s Custom Recovery Flash Kit (by Mullinsinc)
 
-This is a Termux-friendly toolkit to safely flash custom recovery images on the Samsung Galaxy A05s (SM-A055F) with root access.
+This is a Termux-friendly toolkit to safely flash a custom recovery and disable Android Verified Boot (AVB) on the **Samsung Galaxy A05s (SM-A055F)**.
+
+---
 
 ## 📦 Contents
-- `recovery.img` – Touch-enabled custom recovery (compatible with Android 14)
-- `vbmeta.img` – Empty image to disable AVB/verity
-- `flash-via-dd.sh` – Flash recovery and vbmeta via `dd`
-- `install-busybox.sh` – One-click BusyBox setup
+
+| File               | Purpose                                           |
+|--------------------|---------------------------------------------------|
+| `recovery.img`     | Custom TWRP-style recovery for Android 14         |
+| `vbmeta.img`       | Empty AVB image to disable verification/encryption|
+| `flash-via-dd.sh`  | Script to flash recovery + vbmeta from Termux     |
+| `install-busybox.sh` | Local BusyBox setup tool for rooted devices     |
+
+---
 
 ## 🛠️ Requirements
-- Rooted A05s (Magisk)
-- Termux with root access
-- Images placed in `/sdcard/a05s_bundle/`
+
+- Rooted Samsung Galaxy A05s (Magisk or equivalent)
+- Termux with superuser (su) access
+- BusyBox (optional, included in this bundle)
+- `.img` files and scripts placed in `/sdcard/a05s_bundle/`
+
+---
 
 ## 💣 Usage
+
+### Step 1: Prepare the Folder and Files
+
+Open Termux and run:
+
 ```bash
+mkdir -p /sdcard/a05s_bundle
 cd /sdcard/a05s_bundle
+
+# Download recovery & vbmeta images directly
+curl -O https://github.com/Mullinsinc/A05s-Custom-Recovery-Flashkit/releases/download/v1.0.0/recovery.img
+curl -O https://github.com/Mullinsinc/A05s-Custom-Recovery-Flashkit/releases/download/v1.0.0/vbmeta.img
+
+# (Optional) move script file if not already in folder
+cp ~/storage/downloads/flash-via-dd.sh
+
+Step 2: Flash Recovery + Disable AVB
 bash flash-via-dd.sh
+
+Step 3: (Optional) Install Local BusyBox
+bash install-busybox.sh
+
+---
+
+📥 Direct Downloads
+
+File	Link
+
+recovery.img	Download
+vbmeta.img	Download
+
+---
+
+🧙‍♂️ Maintained By
+
+Mullinsinc
+Your local digital wizard, freedom-flasher & rooted-Android evangelist.
+Custom recovery never looked this smooth. 😎
+
+---
