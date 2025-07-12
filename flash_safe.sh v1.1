@@ -5,10 +5,10 @@ IMG_DIR="/sdcard/a05s_bundle"
 LOG_FILE="/sdcard/flash_safe.log"
 BACKUP_DIR="/sdcard/.safe_recovery_backup"
 
-echo "=== A05s Safe Flash Script v1.1 ===" | tee -a ">
+echo "=== A05s Safe Flash Script v1.1 ===" | tee -a "$LOG_FILE>
 
 # ============== PRECHECKS ==============
-echo "[*] Checking environment..." | tee -a "$LOG_FIL>
+echo "[*] Checking environment..." | tee -a "$LOG_FILE>
 command -v su >/dev/null || { echo "[✘] Root access (>
 command -v dd >/dev/null || { echo "[✘] 'dd' command >
 
