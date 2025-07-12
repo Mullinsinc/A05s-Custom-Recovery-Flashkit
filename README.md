@@ -56,6 +56,13 @@ File	Link
 recovery.img	Download
 vbmeta.img	Download
 
+### 🔐 Flash Safe v1.2 Script (Failsafe Mode)
+Run in dry-mode by default. To flash:
+
+```bash
+bash flash-safe_v1.2.sh --force
+
+
 ---
 
 🧙‍♂️ Maintained By
