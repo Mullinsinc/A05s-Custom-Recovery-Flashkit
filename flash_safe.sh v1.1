@@ -5,12 +5,12 @@ IMG_DIR="/sdcard/a05s_bundle"
 LOG_FILE="/sdcard/flash_safe.log"
 BACKUP_DIR="/sdcard/.safe_recovery_backup"
 
-echo "=== A05s Safe Flash Script v1.1 ===" | tee -a "$LOG_FILE>
+echo "=== A05s Safe Flash Script v1.1 ===" | tee -a "$LOG_FILE"
 
 # ============== PRECHECKS ==============
-echo "[*] Checking environment..." | tee -a "$LOG_FILE>
-command -v su >/dev/null || { echo "[✘] Root access (>
-command -v dd >/dev/null || { echo "[✘] 'dd' command >
+echo "[*] Checking environment..." | tee -a "$LOG_FILE"
+command -v su >/dev/null || { echo "[✘] Root access (su) not found!" | tee -a "$LOG_FILE"; exit 1; }
+command -v dd >/dev/null || { echo "[✘] 'dd' command missing!" | tee -a "$LOG_FILE"; exit 1; }
 
 # ============== FILE CHECK ==============
 check_file() {
@@ -21,3 +21,6 @@ check_file() {
         echo "[✘] Empty file: $1" | tee -a "$LOG_FILE"
         exit 1
     else
+        echo "[✓] Found: $1" | tee -a "$LOG_FILE"
+    fi
+}
